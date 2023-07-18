@@ -11,19 +11,22 @@ public class Menu {
             System.out.println("Please enter the game number and press Enter. \n"
                     + "1 - Greet \n"
                     + "2 - Even \n"
-                    + "3 - Exit");
+                    + "3 - Calc \n"
+                    + "4 - Exit");
             a = scanner.nextInt();
         } while (a == 0 || a > 3);
         System.out.println("Your choice: " + a + "\n");
         switch (a) {
             case 1:
-                Cli.greeting();
+                Engine.greeting();
                 break;
             case 2:
-                Cli.greeting();
-                Even.even();
+                Engine.greeting();
+                Even.gameEven();
                 break;
             case 3:
+                Engine.greeting();
+                Calc.calc();
                 break;
             default:
                 break;
