@@ -2,6 +2,7 @@ package hexlet.code;
 
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
+import hexlet.code.games.GCD;
 
 import java.util.Scanner;
 
@@ -15,10 +16,11 @@ public class Menu {
                     + "1 - Greet \n"
                     + "2 - Even \n"
                     + "3 - Calc \n"
-                    + "4 - Exit");
+                    + "4 - GCD \n"
+                    + "5 - Exit");
+            System.out.print("Your choice: ");
             a = scanner.nextInt();
-        } while (a == 0 || a > 3);
-        System.out.println("Your choice: " + a + "\n");
+        } while (a == 0 || a > 4);
         switch (a) {
             case 1:
                 Engine.greeting();
@@ -30,6 +32,10 @@ public class Menu {
             case 3:
                 Engine.greeting();
                 Calc.calc();
+                break;
+            case 4:
+                Engine.greeting();
+                GCD.gameGCD();
                 break;
             default:
                 break;
