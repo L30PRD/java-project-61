@@ -12,13 +12,10 @@ public class Prime {
 
         for (int i = 0; i < array.length; i++) {
             int number = ThreadLocalRandom.current().nextInt(2, 101);
-            String answer = null;
+            String answer = "yes";
             for (int j = 2; j < Math.sqrt(number); j++) {
                 if (number % j == 0) {
                     answer = "no";
-                    break;
-                } else {
-                    answer = "yes";
                 }
             }
             array[i] = new String[]{Integer.toString(number), answer};
