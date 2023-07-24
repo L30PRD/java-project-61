@@ -14,15 +14,15 @@ public class Progression {
             int hiddenNumer = ThreadLocalRandom.current().nextInt(1, length);
             int step = ThreadLocalRandom.current().nextInt(1, 11);
             int number = ThreadLocalRandom.current().nextInt(1, 101);
-            StringBuilder question = new StringBuilder(" ");
+            StringBuilder question = new StringBuilder("");
             int answer = 0;
 
             for (int i = 0; i < length; i++) {
                 number = number + step;
                 if (i != hiddenNumer) {
-                    question.append(" ").append(number).append(" ");
+                    question.append(number).append(" ");
                 } else {
-                    question.append("..");
+                    question.append(".. ");
                     answer = number;
                 }
             }
