@@ -8,6 +8,13 @@ import hexlet.code.games.Prime;
 import java.util.Scanner;
 
 public class Menu {
+    public static final int CHOICE_0 = 0;
+    public static final int CHOICE_1 = 1;
+    public static final int CHOICE_2 = 2;
+    public static final int CHOICE_3 = 3;
+    public static final int CHOICE_4 = 4;
+    public static final int CHOICE_5 = 5;
+    public static final int CHOICE_6 = 6;
 
     public static void menu() {
         int gamesNumber = 6;
@@ -24,28 +31,28 @@ public class Menu {
                     + "0 - Exit");
             System.out.print("Your choice: ");
             a = scanner.nextInt();
-        } while (a == 0 || a > gamesNumber);
+        } while (a == CHOICE_0 || a > gamesNumber);
         switch (a) {
-            case 1:
+            case CHOICE_1:
                 Engine.greeting();
                 break;
-            case 2:
+            case CHOICE_2:
                 Engine.greeting();
                 Even.gameEven();
                 break;
-            case 3:
+            case CHOICE_3:
                 Engine.greeting();
                 Calc.calc();
                 break;
-            case 4:
+            case CHOICE_4:
                 Engine.greeting();
                 GCD.gameGCD();
                 break;
-            case 5:
+            case CHOICE_5:
                 Engine.greeting();
                 Progression.playProgression();
                 break;
-            case 6:
+            case CHOICE_6:
                 Engine.greeting();
                 Prime.playPrime();
                 break;

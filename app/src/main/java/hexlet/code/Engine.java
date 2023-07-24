@@ -6,10 +6,10 @@ public class Engine {
     private static String answer;
     private static Scanner scanner = new Scanner(System.in);
     private static String name;
-    private static int rows = 3;
-    private static int colums = 3;
-    private  static int rndStart = 1;
-    private static int rndEnd = 101;
+    public static int ROWS = 3;
+    public static int COLUMS = 3;
+    public static int RND_START = 1;
+    public static int RND_END = 101;
 
     public static void greeting() {
         System.out.println("\n" + "Welcome to the Brain Games!");
@@ -44,22 +44,4 @@ public class Engine {
     public static String getName() {
         return name;
     }
-
-    public static int getRows() {
-        return rows;
-    }
-
-    public static int getColums() {
-        return colums;
-    }
-
-    public static int getRndStart() {
-        return rndStart;
-    }
-
-    public static int getRndEnd() {
-        return rndEnd;
-    }
-
-
 }
