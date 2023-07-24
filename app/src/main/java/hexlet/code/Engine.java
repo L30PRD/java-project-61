@@ -10,6 +10,7 @@ public class Engine {
     public static final int COLUMS = 3;
     public static final int RNDSTART = 1;
     public static final int RNDEND = 101;
+    public static final int COUNT = 3;
 
     public static void greeting() {
         System.out.println("\n" + "Welcome to the Brain Games!");
@@ -19,7 +20,6 @@ public class Engine {
     }
 
     public static void engine(String startLogo, String[][] answers) {
-        int gameCount = 3;
         int positive = 0;
         System.out.println(startLogo);
         for (int i = 0; i < answers.length; i++) {
@@ -36,7 +36,7 @@ public class Engine {
                 break;
             }
         }
-        if (positive == gameCount) {
+        if (positive == COUNT) {
             System.out.println("Congratulations, " + Engine.getName() + "!");
         }
     }
