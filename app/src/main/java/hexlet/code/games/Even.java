@@ -7,7 +7,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Even {
 
     public static void gameEven() {
-        String[][] answers = new String[3][2];
+        String[][] answers = new String[3][3];
         String startLogo = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
         for (int i = 0; i < answers.length; i++) {

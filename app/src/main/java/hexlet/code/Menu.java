@@ -1,10 +1,6 @@
 package hexlet.code;
 
-import hexlet.code.games.Calc;
-import hexlet.code.games.Even;
-import hexlet.code.games.GCD;
-import hexlet.code.games.Progression;
-
+import hexlet.code.games.*;
 import java.util.Scanner;
 
 public class Menu {
@@ -19,10 +15,11 @@ public class Menu {
                     + "3 - Calc \n"
                     + "4 - GCD \n"
                     + "5 - Progression \n"
-                    + "6 - Exit");
+                    + "6 - Prime \n"
+                    + "7 - Exit");
             System.out.print("Your choice: ");
             a = scanner.nextInt();
-        } while (a == 0 || a > 5);
+        } while (a == 0 || a > 6);
         switch (a) {
             case 1:
                 Engine.greeting();
@@ -42,6 +39,10 @@ public class Menu {
             case 5:
                 Engine.greeting();
                 Progression.playProgression();
+                break;
+            case 6:
+                Engine.greeting();
+                Prime.playPrime();
                 break;
             default:
                 break;
