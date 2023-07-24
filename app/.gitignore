@@ -4,6 +4,15 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
+# Ignore Gradle project-specific cache directory
+.gradle
+*.DS_Store
+*.gitattributes
+*.idea
+
+# Ignore Gradle build output directory
+build
+
 # Ignore bundler config.
 /.bundle
 
