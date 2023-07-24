@@ -3,18 +3,18 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    public static String answer;
-    public static final Scanner scanner = new Scanner(System.in);
-    public static String name;
-    public static final int arrRows = 3;
-    public static final int arrColums = 3;
-    public static final int rndStart = 1;
-    public static final int rndEnd = 101;
+    private static String answer;
+    public static final Scanner SCANNER = new Scanner(System.in);
+    private static String name;
+    public static final int ROWS = 3;
+    public static final int COLUMS = 3;
+    public static final int RNDSTART = 1;
+    public static final int RNDEND = 101;
 
     public static void greeting() {
         System.out.println("\n" + "Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
-        name = scanner.nextLine();
+        name = SCANNER.nextLine();
         System.out.println("Hello, " + name + "!");
     }
 
@@ -25,7 +25,7 @@ public class Engine {
         for (int i = 0; i < answers.length; i++) {
             System.out.println("Question: " + answers[i][0]);
             System.out.print("Your answer: ");
-            answer = scanner.nextLine();
+            answer = SCANNER.nextLine();
             if (answers[i][1].equals(answer)) {
                 System.out.println("Correct!");
                 positive++;

@@ -7,11 +7,11 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Prime {
 
     public static void playPrime() {
-        String[][] array = new String[Engine.arrRows][Engine.arrColums];
+        String[][] array = new String[Engine.ROWS][Engine.COLUMS];
         String startLogo = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
         for (int i = 0; i < array.length; i++) {
-            int number = ThreadLocalRandom.current().nextInt(Engine.rndStart, Engine.rndEnd);
+            int number = ThreadLocalRandom.current().nextInt(Engine.RNDSTART, Engine.RNDEND);
             String answer = "yes";
             for (int j = 2; j < Math.sqrt(number); j++) {
                 if (number % j == 0) {
