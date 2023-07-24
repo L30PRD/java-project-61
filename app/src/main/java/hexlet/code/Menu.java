@@ -10,6 +10,7 @@ import java.util.Scanner;
 public class Menu {
 
     public static void menu() {
+        int gamesNumber = 6;
         Scanner scanner = new Scanner(System.in);
         int a;
         do {
@@ -20,10 +21,10 @@ public class Menu {
                     + "4 - GCD \n"
                     + "5 - Progression \n"
                     + "6 - Prime \n"
-                    + "7 - Exit");
+                    + "0 - Exit");
             System.out.print("Your choice: ");
             a = scanner.nextInt();
-        } while (a == 0 || a > 6);
+        } while (a == 0 || a > gamesNumber);
         switch (a) {
             case 1:
                 Engine.greeting();

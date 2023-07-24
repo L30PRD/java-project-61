@@ -3,12 +3,15 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    public static String answer;
-    public static Scanner scanner = new Scanner(System.in);
-    public static String name;
+    private static String answer;
+    private static Scanner scanner = new Scanner(System.in);
+    private static String name;
+    private static int rows = 3;
+    private static int colums = 3;
+    private  static int rndStart = 1;
+    private static int rndEnd = 101;
 
     public static void greeting() {
-        scanner = new Scanner(System.in);
         System.out.println("\n" + "Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
         name = scanner.nextLine();
@@ -16,6 +19,7 @@ public class Engine {
     }
 
     public static void engine(String startLogo, String[][] answers) {
+        int gameCount = 3;
         int positive = 0;
         System.out.println(startLogo);
         for (int i = 0; i < answers.length; i++) {
@@ -32,7 +36,7 @@ public class Engine {
                 break;
             }
         }
-        if (positive == 3) {
+        if (positive == gameCount) {
             System.out.println("Congratulations, " + Engine.getName() + "!");
         }
     }
@@ -41,7 +45,21 @@ public class Engine {
         return name;
     }
 
-    public static String getAnswer() {
-        return answer;
+    public static int getRows() {
+        return rows;
     }
+
+    public static int getColums() {
+        return colums;
+    }
+
+    public static int getRndStart() {
+        return rndStart;
+    }
+
+    public static int getRndEnd() {
+        return rndEnd;
+    }
+
+
 }

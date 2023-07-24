@@ -7,14 +7,16 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Calc {
 
     public static void calc() {
-        String[][] answers = new String[3][3];
+        String[][] answers = new String[Engine.getRows()][Engine.getColums()];
         String[] operator = {"+", "-", "*"};
         String startLogo = "What is the result of the expression?";
+        int rndOperStart = 0;
+        int rndOperEnd = 3;
 
         for (int i = 0; i < answers.length; i++) {
-            int number1 = ThreadLocalRandom.current().nextInt(1, 101);
-            int number2 = ThreadLocalRandom.current().nextInt(1, 101);
-            int rndOperator = ThreadLocalRandom.current().nextInt(0, 3);
+            int number1 = ThreadLocalRandom.current().nextInt(Engine.getRndStart(), Engine.getRndEnd());
+            int number2 = ThreadLocalRandom.current().nextInt(Engine.getRndStart(), Engine.getRndEnd());
+            int rndOperator = ThreadLocalRandom.current().nextInt(rndOperStart, rndOperEnd);
 
             answers[i] = new String[] {number1
                     + " " + operator[rndOperator]
