@@ -10,7 +10,6 @@ public class GCD {
         String[][] answers = new String[Engine.ROWS][Engine.COLUMS];
         String startLogo = "Find the greatest common divisor of given numbers.";
 
-
         for (int j = 0; j < answers.length; j++) {
             int number1 = ThreadLocalRandom.current().nextInt(Engine.RNDSTART, Engine.RNDEND);
             int number2 = ThreadLocalRandom.current().nextInt(Engine.RNDSTART, Engine.RNDEND);

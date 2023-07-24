@@ -7,7 +7,6 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Calc {
     public static final int RNDSTART = 0;
     public static final int RNDEND = 3;
-    
     public static void calc() {
         String[][] answers = new String[Engine.ROWS][Engine.COLUMS];
         String[] operator = {"+", "-", "*"};
