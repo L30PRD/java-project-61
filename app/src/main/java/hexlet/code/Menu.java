@@ -15,9 +15,10 @@ public class Menu {
     public static final int CHOICE_4 = 4;
     public static final int CHOICE_5 = 5;
     public static final int CHOICE_6 = 6;
+    public static final int GAMES_NUMBER = 6;
 
     public static void menu() {
-        int gamesNumber = 6;
+
         Scanner scanner = new Scanner(System.in);
         int a;
         do {
@@ -31,7 +32,7 @@ public class Menu {
                     + "0 - Exit");
             System.out.print("Your choice: ");
             a = scanner.nextInt();
-        } while (a == CHOICE_0 || a > gamesNumber);
+        } while (a == CHOICE_0 || a > GAMES_NUMBER);
         switch (a) {
             case CHOICE_1:
                 Engine.greeting();

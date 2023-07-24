@@ -6,16 +6,16 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Progression {
 
     public static void playProgression() {
-        String[][] array = new String[Engine.ROWS][Engine.COLUMS];
+        String[][] array = new String[Engine.arrRows][Engine.arrColums];
         String startLogo = "What number is missing in the progression?";
 
         for (int j = 0; j < array.length; j++) {
             int amountStart = 5;
             int amountEnd = 11;
             int length = ThreadLocalRandom.current().nextInt(amountStart, amountEnd);
-            int hiddenNumer = ThreadLocalRandom.current().nextInt(Engine.RND_START, length);
-            int step = ThreadLocalRandom.current().nextInt(Engine.RND_START, amountEnd);
-            int number = ThreadLocalRandom.current().nextInt(Engine.RND_START, Engine.RND_END);
+            int hiddenNumer = ThreadLocalRandom.current().nextInt(Engine.rndStart, length);
+            int step = ThreadLocalRandom.current().nextInt(Engine.rndStart, amountEnd);
+            int number = ThreadLocalRandom.current().nextInt(Engine.rndStart, Engine.rndEnd);
             StringBuilder question = new StringBuilder("");
             int answer = 0;
 

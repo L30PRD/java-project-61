@@ -3,13 +3,13 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    private static String answer;
-    private static Scanner scanner = new Scanner(System.in);
-    private static String name;
-    public static int ROWS = 3;
-    public static int COLUMS = 3;
-    public static int RND_START = 1;
-    public static int RND_END = 101;
+    public static String answer;
+    public static final Scanner scanner = new Scanner(System.in);
+    public static String name;
+    public static final int arrRows = 3;
+    public static final int arrColums = 3;
+    public static final int rndStart = 1;
+    public static final int rndEnd = 101;
 
     public static void greeting() {
         System.out.println("\n" + "Welcome to the Brain Games!");

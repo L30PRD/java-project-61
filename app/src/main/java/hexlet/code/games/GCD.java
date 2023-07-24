@@ -7,13 +7,13 @@ import java.util.concurrent.ThreadLocalRandom;
 public class GCD {
 
     public static void gameGCD() {
-        String[][] answers = new String[Engine.ROWS][Engine.COLUMS];
+        String[][] answers = new String[Engine.arrRows][Engine.arrColums];
         String startLogo = "Find the greatest common divisor of given numbers.";
 
 
         for (int j = 0; j < answers.length; j++) {
-            int number1 = ThreadLocalRandom.current().nextInt(Engine.RND_START, Engine.RND_END);
-            int number2 = ThreadLocalRandom.current().nextInt(Engine.RND_START, Engine.RND_END);
+            int number1 = ThreadLocalRandom.current().nextInt(Engine.rndStart, Engine.rndEnd);
+            int number2 = ThreadLocalRandom.current().nextInt(Engine.rndStart, Engine.rndEnd);
             int maximum = Math.max(number1, number2);
             int minimum = Math.min(number1, number2);
             int result = 0;
