@@ -8,7 +8,7 @@ public class Engine {
     private static String name;
     public static final int ROWS = 3;
     public static final int COLUMS = 3;
-    public static final int RNDSTART = 1;
+    public static final int RNDSTART = 2;
     public static final int RNDEND = 101;
     public static final int COUNT = 3;
 
