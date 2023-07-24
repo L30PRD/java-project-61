@@ -22,7 +22,7 @@ public class Progression {
                 if (i != hiddenNumer) {
                     question.append(" ").append(number).append(" ");
                 } else {
-                    question.append(".. ");
+                    question.append("..");
                     answer = number;
                 }
             }
