@@ -16,6 +16,7 @@ public class Prime {
             for (int j = 2; j < Math.sqrt(number); j++) {
                 if (number % j == 0) {
                     answer = "no";
+                    break;
                 }
             }
             array[i] = new String[]{Integer.toString(number), answer};
