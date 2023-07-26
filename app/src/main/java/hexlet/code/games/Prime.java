@@ -1,26 +1,28 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
-import java.util.concurrent.ThreadLocalRandom;
+import hexlet.code.utils.Util;
 
 public class Prime {
 
     public static void playPrime() {
-        String[][] array = new String[Engine.ROWS][Engine.COLUMS];
+        String[][] array = Util.newArray();
         String startLogo = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
         for (int i = 0; i < array.length; i++) {
-            int number = ThreadLocalRandom.current().nextInt(Engine.RNDSTART, Engine.RNDEND);
-            String answer = "yes";
-            for (int j = 2; j < Math.sqrt(number); j++) {
-                if (number % j == 0) {
-                    answer = "no";
-                    break;
-                }
-            }
+            int number = Util.random();
+            String answer = isPrime(number) ? "yes" : "no";
             array[i] = new String[]{Integer.toString(number), answer};
         }
         Engine.engine(startLogo, array);
+    }
+
+    public static boolean isPrime(int a) {
+        for (int j = 2; j < Math.sqrt(a); j++) {
+            if (a % j == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }
