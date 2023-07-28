@@ -5,7 +5,7 @@ import hexlet.code.utils.Util;
 
 public class GCD {
     public static final int RANGE = 101;
-    public static final String LOGO = "What number is missing in the progression?";
+    public static final String LOGO = "Find the greatest common divisor of given numbers.";
 
     public static void gameGCD() {
         String[][] answers = new String[Engine.ROUNDS][Engine.ROUNDS];
