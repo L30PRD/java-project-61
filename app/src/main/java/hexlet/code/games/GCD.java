@@ -4,18 +4,19 @@ import hexlet.code.Engine;
 import hexlet.code.utils.Util;
 
 public class GCD {
+    public static final int RANGE = 101;
+    public static final String LOGO = "What number is missing in the progression?";
 
     public static void gameGCD() {
-        String[][] answers = Util.newArray();
-        String startLogo = "Find the greatest common divisor of given numbers.";
+        String[][] answers = new String[Engine.ROUNDS][Engine.ROUNDS];
 
         for (int j = 0; j < answers.length; j++) {
-            int number1 = Util.random();
-            int number2 = Util.random();
+            int number1 = Util.random(RANGE);
+            int number2 = Util.random(RANGE);
 
             answers[j] = new String[] {number1 + " " + number2, Integer.toString(calcGCD(number1, number2))};
         }
-        Engine.engine(startLogo, answers);
+        Engine.engine(LOGO, answers);
     }
 
     public static int calcGCD(int a, int b) {

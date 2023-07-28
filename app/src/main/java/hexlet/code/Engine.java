@@ -5,6 +5,7 @@ import hexlet.code.utils.Cli;
 import java.util.Scanner;
 
 public class Engine {
+    public static final int ROUNDS = 3;
 
     public static void engine(String startLogo, String[][] answers) {
         Cli.greeting();
@@ -22,7 +23,7 @@ public class Engine {
                 System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '"
                         + strings[1] + "'. \n"
                         + "Let's try again, " + Cli.getName() + "!");
-                System.exit(0);
+                return;
             }
         }
         System.out.println("Congratulations, " + Cli.getName() + "!");

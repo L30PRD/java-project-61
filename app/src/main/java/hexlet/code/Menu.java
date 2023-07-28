@@ -5,7 +5,6 @@ import hexlet.code.games.Even;
 import hexlet.code.games.GCD;
 import hexlet.code.games.Progression;
 import hexlet.code.games.Prime;
-import hexlet.code.utils.Checker;
 import hexlet.code.utils.Cli;
 
 import java.util.Scanner;
@@ -25,21 +24,20 @@ public class Menu {
                 + "0 - Exit");
         System.out.print("Your choice: ");
 
-        try {
-            int a = scanner.nextInt();
-            Checker.check(a);
-            switch (a) {
-                case 1 -> Cli.greeting();
-                case 2 -> Even.gameEven();
-                case 3 -> Calc.calc();
-                case 4 -> GCD.gameGCD();
-                case 5 -> Progression.playProgression();
-                case 6 -> Prime.playPrime();
-                default -> {
-                }
+
+        String a = scanner.nextLine();
+        switch (a) {
+            case "0" -> System.exit(0);
+            case "1" -> Cli.greeting();
+            case "2" -> Even.gameEven();
+            case "3" -> Calc.calc();
+            case "4" -> GCD.gameGCD();
+            case "5" -> Progression.playProgression();
+            case "6" -> Prime.playPrime();
+            default -> {
+                System.out.println("\nNo such option!");
             }
-        } catch (NullPointerException e) {
-            System.out.println(e.getMessage());
         }
+
     }
 }

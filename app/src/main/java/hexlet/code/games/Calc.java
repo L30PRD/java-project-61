@@ -1,53 +1,40 @@
 package hexlet.code.games;
 
-import hexlet.code.utils.Checker;
 import hexlet.code.Engine;
 import hexlet.code.utils.Util;
 
 public class Calc {
-    public static final int RNDSTART = 0;
-    public static final int RNDEND = 3;
+    public static final int RANGE = 101;
+    public static  final String LOGO = "What is the result of the expression?";
 
     public static void calc() {
-        String[][] answers = Util.newArray();
+        String[][] answers = new String[Engine.ROUNDS][Engine.ROUNDS];
         String[] operator = {"+", "-", "*"};
-        String startLogo = "What is the result of the expression?";
 
         for (int i = 0; i < answers.length; i++) {
-            int number1 = Util.random();
-            int number2 = Util.random();
-            String rndOperator = operator[Util.randomFromUntil(RNDSTART, RNDEND)];
+            int number1 = Util.random(RANGE);
+            int number2 = Util.random(RANGE);
+            String rndOperator = operator[Util.randomFromUntil(0, operator.length)];
 
             answers[i] = new String[] {number1
                     + " " + rndOperator
                     + " " + number2,
                     Integer.toString(calculation(number1, rndOperator, number2)) };
         }
-        Engine.engine(startLogo, answers);
+        Engine.engine(LOGO, answers);
     }
 
     public static int calculation(int n1, String op, int n2) {
-        int plus = n1 + n2;
-        int minus = n1 - n2;
-        int multiply = n1 * n2;
-        try {
-            Checker.check(op);
-            switch (op) {
-                case "+" -> {
-                    return plus;
-                }
-                case "-" -> {
-                    return minus;
-                }
-                case "*" -> {
-                    return multiply;
-                }
-                default -> {
-                }
+        int result = 0;
+
+        switch (op) {
+            case "+" -> result = n1 + n2;
+            case "-" -> result = n1 - n2;
+            case "*" -> result = n1 * n2;
+            default -> {
+                throw new RuntimeException("No such option!");
             }
-        } catch (NullPointerException e) {
-            System.out.println(e.getMessage());
         }
-        return 0;
+        return result;
     }
 }

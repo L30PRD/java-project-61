@@ -6,32 +6,33 @@ import hexlet.code.utils.Util;
 public class Progression {
     public static final int START = 5;
     public static final int END = 11;
+    public static final int RANGE = 101;
+    public static final String LOGO = "What number is missing in the progression?";
 
     public static void playProgression() {
-        String[][] array = Util.newArray();
-        String startLogo = "What number is missing in the progression?";
+        String[][] array = new String[Engine.ROUNDS][Engine.ROUNDS];
 
-        for (int j = 0; j < array.length; j++) {
+        for (int j = 0; j < Engine.ROUNDS; j++) {
             int length = Util.randomFromUntil(START, END);
-            int hiddenNumer = Util.randomUntil(length);
-            int step = Util.randomUntil(END);
-            int number = Util.random();
-            int answer = number + ((hiddenNumer + 1) * step);
-            array[j] = new String[]{buildProgression(length, hiddenNumer, step, number), Integer.toString(answer)};
+            int hiddenNumber = Util.random(length);
+            int step = Util.random(END);
+            int number = Util.random(RANGE);
+
+            String[] question = buildProgression(length, step, number);
+            String answer = question[hiddenNumber];
+            question[hiddenNumber] = "..";
+            array[j] = new String[]{String.join(" ", question), answer};
         }
-        Engine.engine(startLogo, array);
+        Engine.engine(LOGO, array);
     }
 
-    public static String buildProgression(int length, int hiddenNumer, int step, int number) {
-        StringBuilder question = new StringBuilder("");
-        for (int i = 0; i < length; i++) {
+    public static String[] buildProgression(int length, int step, int number) {
+        String[] array = new String[length];
+
+        for (int i = 0; i < array.length; i++) {
             number = number + step;
-            if (i != hiddenNumer) {
-                question.append(number).append(" ");
-            } else {
-                question.append(".. ");
-            }
+            array[i] = Integer.toString(number);
         }
-        return question.toString();
+        return array;
     }
 }
