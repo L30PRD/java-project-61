@@ -25,16 +25,20 @@ public class Calc {
     }
 
     public static int calculation(int n1, String op, int n2) {
-        int result = 0;
 
         switch (op) {
-            case "+" -> result = n1 + n2;
-            case "-" -> result = n1 - n2;
-            case "*" -> result = n1 * n2;
+            case "+" -> {
+                return n1 + n2;
+            }
+            case "-" -> {
+                return n1 - n2;
+            }
+            case "*" -> {
+                return n1 * n2;
+            }
             default -> {
                 throw new RuntimeException("No such option!");
             }
         }
-        return result;
     }
 }
