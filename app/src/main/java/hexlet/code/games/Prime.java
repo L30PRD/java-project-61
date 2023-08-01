@@ -19,7 +19,7 @@ public class Prime {
     }
 
     public static boolean isPrime(int a) {
-        if (a == 0 || a == 1) {
+        if (a <= 1) {
             return false;
         }
         for (int j = 2; j < Math.sqrt(a); j++) {
